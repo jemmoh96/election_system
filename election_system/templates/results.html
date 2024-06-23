@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Election Results</h2>
+    <table>
+        <tr>
+            <th>Position</th>
+            <th>Candidate ID</th>
+            <th>Votes</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.position }}</td>
+            <td>{{ result.candidate_id }}</td>
+            <td>{{ result.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Vote</h2>
+    <form action="{{ url_for('vote') }}" method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.president.label }}<br>
+            {% for subfield in form.president %}
+                {{ subfield }} {{ subfield.label }}<br>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.governor.label }}<br>
+            {% for subfield in form.governor %}
+                {{ subfield }} {{ subfield.label }}<br>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.senator.label }}<br>
+            {% for subfield in form.senator %}
+                {{ subfield }} {{ subfield.label }}<br>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.women_rep.label }}<br>
+            {% for subfield in form.women_rep %}
+                {{ subfield }} {{ subfield.label }}<br>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.mp.label }}<br>
+            {% for subfield in form.mp %}
+                {{ subfield }} {{ subfield.label }}<br>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.mca.label }}<br>
+            {% for subfield in form.mca %}
+                {{ subfield }} {{ subfield.label }}<br>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>
